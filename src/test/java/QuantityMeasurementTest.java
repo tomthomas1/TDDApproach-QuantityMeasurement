@@ -123,7 +123,7 @@ public class QuantityMeasurementTest {
 			Assert.assertEquals(inch1, inch2);
 		}
 	 
-	// TC 1.11 - Value check for different values
+	// TC 1.12 - Value check for different values
 		 @Test
 			public void given0Inchand1Inch_DiffValue_ShouldReturnNotEqual() {
 				Inch inch1 = new Inch(0.0);
