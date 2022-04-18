@@ -81,5 +81,13 @@ public class QuantityMeasurementTest {
         Inch inch2 = new Inch(1.0);
         Assert.assertNotSame(inch1, inch2);
     }
+	
+	// TC 1.8 - Inch Null Check
+	@Test
+    public void given0InchAndNullInch_ShouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = null;
+        Assert.assertNotSame(inch1, inch2);
+    }
 
 }
