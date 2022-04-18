@@ -55,5 +55,13 @@ public class QuantityMeasurementTest {
         Feet feet2 = new Feet(0);
         Assert.assertNotSame(feet1, feet2);
     }
+	
+	// TC 1.5 - Value check for equality.
+		@Test
+		public void given0Feetand0Feet_SameValue_ShouldReturnEqual() {
+			Feet feet1 = new Feet(1);
+			Feet feet2 = new Feet(1);
+			assertEquals(feet1, feet2);
+		}
 
 }
