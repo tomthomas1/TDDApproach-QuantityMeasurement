@@ -30,5 +30,23 @@ public class QuantityMeasurementTest {
         Feet feet2 = null;
         Assert.assertNotSame(feet1, feet2);
     }
+	
+	//TC 1.3 - Reference Check
+	@Test
+    public void givenFeetandFeetFromSameRef_WhenEqual_ShouldReturnTrue() {
+        Feet feet1 = new Feet(0);
+        boolean result = feet1 == feet1;
+        Assert.assertTrue(result);
+    }
+	
+	//TC 1.3 - Reference Check With Different values
+	@Test
+    public void given0Feetand1FeetWithDiffRef_WhenNotEqual_ShouldReturnFalse() {
+        Feet feet1 = new Feet(0);
+        Feet feet2 = new Feet(1);
+        boolean result = feet1 == feet2;
+        Assert.assertFalse(result);
+    }
+
 
 }
