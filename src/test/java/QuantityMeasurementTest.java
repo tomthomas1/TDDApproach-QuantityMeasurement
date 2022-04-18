@@ -1,8 +1,5 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -25,5 +22,13 @@ public class QuantityMeasurementTest {
 		Feet feet2 = new Feet(1);
 		assertNotEquals(feet1, feet2);
 	}
+	
+	//TC 1.2 - Null Check
+	@Test
+    public void given0FeetandNullFeet_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0);
+        Feet feet2 = null;
+        Assert.assertNotSame(feet1, feet2);
+    }
 
 }
