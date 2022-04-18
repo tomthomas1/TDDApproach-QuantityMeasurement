@@ -47,6 +47,13 @@ public class QuantityMeasurementTest {
         boolean result = feet1 == feet2;
         Assert.assertFalse(result);
     }
-
+	
+	// TC 1.4 - Type Check
+	@Test
+    public void given0Feetand0FeetFromDifferentType_ShouldReturnNotEqual() {
+        Feet feet1 = new Feet(0.0);
+        Feet feet2 = new Feet(0);
+        Assert.assertNotSame(feet1, feet2);
+    }
 
 }

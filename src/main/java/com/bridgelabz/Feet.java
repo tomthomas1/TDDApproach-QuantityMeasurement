@@ -1,9 +1,9 @@
 package com.bridgelabz;
 
 public class Feet {
-	private final int value;
+	private final double value;
 
-	public Feet(int value) {
+	public Feet(double value) {
 		this.value = value;
 	}
 
@@ -16,7 +16,7 @@ public class Feet {
 		if (getClass() != obj.getClass())
 			return false;
 		Feet other = (Feet) obj;
-		if (value != other.value)
+		if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))
 			return false;
 		return true;
 	}
