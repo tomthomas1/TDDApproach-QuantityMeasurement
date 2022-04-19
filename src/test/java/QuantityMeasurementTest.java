@@ -1,10 +1,14 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 import com.bridgelabz.Feet;
 import com.bridgelabz.Inch;
+import com.bridgelabz.Yard;
 
 public class QuantityMeasurementTest {
 
@@ -73,31 +77,31 @@ public class QuantityMeasurementTest {
 		Inch inch2 = new Inch(0.0);
 		Assert.assertEquals(inch1, inch2);
 	}
-	
+
 	// TC 1.7 - Different Inch value test.
 	@Test
-    public void given0Inchand1Inch_ShouldReturnNotEqual() {
-        Inch inch1 = new Inch(0.0);
-        Inch inch2 = new Inch(1.0);
-        Assert.assertNotSame(inch1, inch2);
-    }
-	
+	public void given0Inchand1Inch_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertNotSame(inch1, inch2);
+	}
+
 	// TC 1.8 - Inch Null Check
 	@Test
-    public void given0InchAndNullInch_ShouldReturnNotEqual() {
-        Inch inch1 = new Inch(0.0);
-        Inch inch2 = null;
-        Assert.assertNotSame(inch1, inch2);
-    }
-	
+	public void given0InchAndNullInch_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = null;
+		Assert.assertNotSame(inch1, inch2);
+	}
+
 	// TC 1.9 - Reference Check
 	@Test
-    public void givenInchAndInchFromSameRef_WhenEqual_ShouldReturnTrue() {
-        Inch inch1 = new Inch(0);
-        boolean result = inch1 == inch1;
-        Assert.assertTrue(result);
-    }
-	
+	public void givenInchAndInchFromSameRef_WhenEqual_ShouldReturnTrue() {
+		Inch inch1 = new Inch(0);
+		boolean result = inch1 == inch1;
+		Assert.assertTrue(result);
+	}
+
 	// TC 1.9 - Reference Check with different values.
 	@Test
 	public void givenInchAndInchWithDiffSameRef_WhenNotEqual_ShouldReturnFalse() {
@@ -129,6 +133,48 @@ public class QuantityMeasurementTest {
 		Inch inch1 = new Inch(0.0);
 		Inch inch2 = new Inch(1.0);
 		Assert.assertNotEquals(inch1, inch2);
+	}
+
+	// Yard Test Cases
+	
+	// Same Yard value test.
+	@Test
+	public void given0Yardand0Yard_ShouldReturnEqual() {
+		Yard yard1 = new Yard(0.0);
+		Yard yard2 = new Yard(0.0);
+		Assert.assertEquals(yard1, yard2);
+	}
+
+	// Different Yard value test.
+	@Test
+	public void given0Yardand1Yard_ShouldReturnNotEqual() {
+		Yard yard1 = new Yard(0.0);
+		Yard yard2 = new Yard(1.0);
+		assertNotEquals(yard1, yard2);
+	}
+
+	// Yard Null Check
+	@Test
+	public void given0YardAndNullYard_ShouldReturnNotEqual() {
+		Yard yard1 = new Yard(0.0);
+		Yard yard2 = null;
+		assertNull(null, yard2);
+	}
+
+	// Reference Check
+	@Test
+	public void givenYardAndYardFromSameRef_WhenEqual_ShouldReturnTrue() {
+		Yard yard1 = new Yard(0.0);
+		boolean result = yard1 == yard1;
+		Assert.assertTrue(result);
+	}
+
+	// Yard Type Check
+	@Test
+	public void given0Yardand0YardFromDifferentType_ShouldReturnNotEqual() {
+		Yard yard1 = new Yard(0.0);
+		Yard yard2 = new Yard(0);
+		Assert.assertNotSame(yard1, yard2);
 	}
 
 }

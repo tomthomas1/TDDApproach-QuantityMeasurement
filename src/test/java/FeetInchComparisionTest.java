@@ -56,5 +56,4 @@ public class FeetInchComparisionTest {
 		boolean result = InchToFeet.lengthComparison(1.0, 1.0);
 		assertFalse(result);
 	}
-
 }

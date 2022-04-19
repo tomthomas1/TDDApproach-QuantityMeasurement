@@ -14,6 +14,11 @@ public class Feet {
         ft = 12 * ft;
         return ft == in;
     }
+	
+	public boolean lengthComparisonFeetYard(double ft, double yd) {
+		yd = 3 * yd;
+        return yd == ft;
+    }
 
 	@Override
 	public boolean equals(Object obj) {

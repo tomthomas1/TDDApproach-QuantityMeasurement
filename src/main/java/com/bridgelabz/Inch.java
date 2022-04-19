@@ -15,6 +15,11 @@ public class Inch {
         ft = ft * 12;
         return ft == in;
     }
+    
+    public boolean lengthComparisonInchYard(double in, double yd) {
+		yd = 36 * yd;
+        return yd == in;
+    }
 
 	@Override
 	public boolean equals(Object obj) {
