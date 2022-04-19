@@ -137,7 +137,7 @@ public class QuantityMeasurementTest {
 	}
 
 	// Yard Test Cases
-	
+
 	// Same Yard value test.
 	@Test
 	public void given0Yardand0Yard_ShouldReturnEqual() {
@@ -177,7 +177,7 @@ public class QuantityMeasurementTest {
 		Yard yard2 = new Yard(0);
 		Assert.assertNotSame(yard1, yard2);
 	}
-	
+
 	// UC2 - 3 Feet = 1 Yard
 	@Test
 	public void given3FeetAnd1Yard_WhenCorrect_ShouldReturnTrue() {
@@ -185,13 +185,53 @@ public class QuantityMeasurementTest {
 		boolean result = feetToYard.lengthComparisonFeetYard(3.0, 1.0);
 		assertTrue(result);
 	}
-	
+
 	// UC2 - 3 Feet != 2 Yard
+	@Test
+	public void given3FeetAnd2Yard_WhenWrong_ShouldReturnFalse() {
+		Feet feetToYard = new Feet();
+		boolean result = feetToYard.lengthComparisonFeetYard(3.0, 2.0);
+		assertFalse(result);
+	}
+
+	// TC-1.14 1Feet != 1 Yard
+	@Test
+	public void given1FeetAnd1Yard_WhenWrong_ShouldReturnFalse() {
+		Feet feetToYard = new Feet();
+		boolean result = feetToYard.lengthComparisonFeetYard(1.0, 1.0);
+		assertFalse(result);
+	}
+
+	// TC-1.15 1Inch != 1 yard
+	@Test
+	public void given1InchtAnd1Yard_WhenWrong_ShouldReturnFalse() {
+		Inch InchToYard = new Inch();
+		boolean result = InchToYard.lengthComparisonInchYard(1.0, 1.0);
+		assertFalse(result);
+	}
+
+	// TC-1.16 1Yard = 36 Inch
+	@Test
+	public void given1YardAnd36Inch_WhenCorrect_ShouldReturnTrue() {
+		Yard yardToFeet = new Yard();
+		boolean result = yardToFeet.lengthComparisonYardInch(1.0, 36.0);
+		assertTrue(result);
+	}
+
+	// TC-1.17 36Inch = 1 yard
+	@Test
+	public void given36InchtAnd1Yard_WhenCorrect_ShouldReturnTrue() {
+		Inch InchToYard = new Inch();
+		boolean result = InchToYard.lengthComparisonInchYard(36.0, 1.0);
+		assertTrue(result);
+	}
+	
+	// TC-1.18 1Yard = 3 Feet
 		@Test
-		public void given3FeetAnd2Yard_WhenWrong_ShouldReturnFalse() {
-			Feet feetToYard = new Feet();
-			boolean result = feetToYard.lengthComparisonFeetYard(3.0, 2.0);
-			assertFalse(result);
+		public void given1YardAnd3Feet_WhenCorrect_ShouldReturnTrue() {
+			Yard yardToFeet = new Yard();
+			boolean result = yardToFeet.lengthComparisonYardFeet(1.0, 3.0);
+			assertTrue(result);
 		}
 
 }
