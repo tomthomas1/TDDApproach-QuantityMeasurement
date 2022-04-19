@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -176,5 +177,21 @@ public class QuantityMeasurementTest {
 		Yard yard2 = new Yard(0);
 		Assert.assertNotSame(yard1, yard2);
 	}
+	
+	// UC2 - 3 Feet = 1 Yard
+	@Test
+	public void given3FeetAnd1Yard_WhenCorrect_ShouldReturnTrue() {
+		Feet feetToYard = new Feet();
+		boolean result = feetToYard.lengthComparisonFeetYard(3.0, 1.0);
+		assertTrue(result);
+	}
+	
+	// UC2 - 3 Feet != 2 Yard
+		@Test
+		public void given3FeetAnd2Yard_WhenWrong_ShouldReturnFalse() {
+			Feet feetToYard = new Feet();
+			boolean result = feetToYard.lengthComparisonFeetYard(3.0, 2.0);
+			assertFalse(result);
+		}
 
 }
