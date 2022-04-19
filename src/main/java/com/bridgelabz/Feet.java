@@ -1,11 +1,19 @@
 package com.bridgelabz;
 
 public class Feet {
-	private final double value;
+	private double value;
 
 	public Feet(double value) {
 		this.value = value;
 	}
+	
+	public Feet() {
+    }
+	
+	public boolean lengthComparison(double ft, double in) {
+        ft = 12 * ft;
+        return ft == in;
+    }
 
 	@Override
 	public boolean equals(Object obj) {

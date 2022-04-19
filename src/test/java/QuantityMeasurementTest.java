@@ -100,35 +100,35 @@ public class QuantityMeasurementTest {
 	
 	// TC 1.9 - Reference Check with different values.
 	@Test
-    public void givenInchAndInchWithDiffSameRef_WhenNotEqual_ShouldReturnFalse() {
-        Inch inch1 = new Inch(0);
-        Inch inch2 = new Inch(1);
-        boolean result = inch1 == inch2;
-        Assert.assertFalse(result);
-    }
-	
+	public void givenInchAndInchWithDiffSameRef_WhenNotEqual_ShouldReturnFalse() {
+		Inch inch1 = new Inch(0);
+		Inch inch2 = new Inch(1);
+		boolean result = inch1 == inch2;
+		Assert.assertFalse(result);
+	}
+
 	// TC 1.10 - Type Check
-	 @Test
-	    public void given0Inchand0InchFromDifferentType_ShouldReturnNotEqual() {
-	        Inch inch1 = new Inch(0.0);
-	        Inch inch2 = new Inch(0);
-	        Assert.assertNotSame(inch1, inch2);
-	    }
-	 
-	 // TC 1.11 - Value check for equality
-	 @Test
-		public void given0Inchand0Inch_SameValue_ShouldReturnEqual() {
-			Inch inch1 = new Inch(0.0);
-			Inch inch2 = new Inch(0.0);
-			Assert.assertEquals(inch1, inch2);
-		}
-	 
+	@Test
+	public void given0Inchand0InchFromDifferentType_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0);
+		Assert.assertNotSame(inch1, inch2);
+	}
+
+	// TC 1.11 - Value check for equality
+	@Test
+	public void given0Inchand0Inch_SameValue_ShouldReturnEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(0.0);
+		Assert.assertEquals(inch1, inch2);
+	}
+
 	// TC 1.12 - Value check for different values
-		 @Test
-			public void given0Inchand1Inch_DiffValue_ShouldReturnNotEqual() {
-				Inch inch1 = new Inch(0.0);
-				Inch inch2 = new Inch(1.0);
-				Assert.assertNotEquals(inch1, inch2);
-			}
+	@Test
+	public void given0Inchand1Inch_DiffValue_ShouldReturnNotEqual() {
+		Inch inch1 = new Inch(0.0);
+		Inch inch2 = new Inch(1.0);
+		Assert.assertNotEquals(inch1, inch2);
+	}
 
 }
