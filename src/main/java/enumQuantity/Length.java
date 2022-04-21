@@ -1,20 +1,15 @@
 package enumQuantity;
 
-public class Length {
-	public double quantity;
+public enum Length implements MeasurementUnits {
+	CENTI_METER(0.4), INCH(1), FEET(12), YARD(36);
 
-	public double convert(double unit, double quantity) {
-		return this.quantity = unit * quantity;
+	public final double baseUnitConversion;
+
+	Length(double baseUnitConversion) {
+		this.baseUnitConversion = baseUnitConversion;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-		Length length = (Length) o;
-		return Double.compare(length.quantity, quantity) == 0;
+	public double convertToBaseUnit(QuantityMeasurementSystem obj) {
+		return obj.value * baseUnitConversion;
 	}
-
 }

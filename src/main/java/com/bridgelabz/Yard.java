@@ -6,15 +6,15 @@ public class Yard {
 	public Yard(double yard) {
 		this.yard = yard;
 	}
-	
+
 	public Yard() {
     }
-	
+
 	public boolean lengthComparisonYardFeet(double yd, double ft) {
         yd = 3 * yd;
         return yd == ft;
     }
-	
+
 	public boolean lengthComparisonYardInch(double yd, double in) {
 		yd = 36 * yd;
         return yd == in;

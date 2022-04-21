@@ -7,7 +7,7 @@ public class Inch {
 	public Inch(double value) {
 		this.value = value;
 	}
-	
+
 	public Inch() {
     }
 
@@ -15,7 +15,7 @@ public class Inch {
         ft = ft * 12;
         return ft == in;
     }
-    
+
     public boolean lengthComparisonInchYard(double in, double yd) {
 		yd = 36 * yd;
         return yd == in;
@@ -25,9 +25,7 @@ public class Inch {
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
+		if ((obj == null) || (getClass() != obj.getClass()))
 			return false;
 		Inch other = (Inch) obj;
 		if (Double.doubleToLongBits(value) != Double.doubleToLongBits(other.value))

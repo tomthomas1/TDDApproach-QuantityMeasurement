@@ -1,3 +1,4 @@
+package com.bridgelabz;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -225,13 +226,13 @@ public class QuantityMeasurementTest {
 		boolean result = InchToYard.lengthComparisonInchYard(36.0, 1.0);
 		assertTrue(result);
 	}
-	
+
 	// TC-1.18 1Yard = 3 Feet
-		@Test
-		public void given1YardAnd3Feet_WhenCorrect_ShouldReturnTrue() {
-			Yard yardToFeet = new Yard();
-			boolean result = yardToFeet.lengthComparisonYardFeet(1.0, 3.0);
-			assertTrue(result);
-		}
+	@Test
+	public void given1YardAnd3Feet_WhenCorrect_ShouldReturnTrue() {
+		Yard yardToFeet = new Yard();
+		boolean result = yardToFeet.lengthComparisonYardFeet(1.0, 3.0);
+		assertTrue(result);
+	}
 
 }
