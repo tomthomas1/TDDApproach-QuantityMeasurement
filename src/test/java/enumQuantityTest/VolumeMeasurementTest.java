@@ -119,7 +119,7 @@ public class VolumeMeasurementTest {
 
 	// UC 6 : 1 Gallon + 3.78 Litre = 7.56 Litre
 	@Test
-	public void given1GallonAnd3$78Liter_WhenAdded_ShouldReturn7$57Liter() {
+	public void given1GallonAnd3_78Liter_WhenAdded_ShouldReturn7_57Liter() {
 		QuantityMeasurementSystem gallon = new QuantityMeasurementSystem(Volume.GALLON, 1.0);
 		QuantityMeasurementSystem liter = new QuantityMeasurementSystem(Volume.LITER, 3.78);
 		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Volume.LITER, 7.56);
