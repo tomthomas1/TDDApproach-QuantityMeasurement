@@ -49,7 +49,7 @@ public class VolumeMeasurementTest {
 		assertNotEquals(volume, length);
 	}
 
-	//  Liter Check
+	// Liter Check
 	// 0 Liter = 0 Liter
 	@Test
 	public void give0LiterAnd0Liter_ShouldReturnEqualVolume() {
@@ -115,5 +115,25 @@ public class VolumeMeasurementTest {
 		QuantityMeasurementSystem liter = new QuantityMeasurementSystem(Volume.LITER, 1.0);
 		boolean compareCheck = ml.compare(liter);
 		assertTrue(compareCheck);
+	}
+
+	// UC 6 : 1 Gallon + 3.78 Litre = 7.56 Litre
+	@Test
+	public void given1GallonAnd3$78Liter_WhenAdded_ShouldReturn7$57Liter() {
+		QuantityMeasurementSystem gallon = new QuantityMeasurementSystem(Volume.GALLON, 1.0);
+		QuantityMeasurementSystem liter = new QuantityMeasurementSystem(Volume.LITER, 3.78);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Volume.LITER, 7.56);
+		QuantityMeasurementSystem actualSum = gallon.sumOfQuantity(liter, Volume.LITER);
+		assertEquals(expectedSum, actualSum);
+	}
+
+	// UC 6 : 1 Litre + 1000 ml = 2 Litres
+	@Test
+	public void given1LiterAnd1000MilliLiter_WhenAdded_ShouldReturn2Liter() {
+		QuantityMeasurementSystem liter = new QuantityMeasurementSystem(Volume.LITER, 1.0);
+		QuantityMeasurementSystem ml = new QuantityMeasurementSystem(Volume.MILLI_LITER, 1000.0);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Volume.LITER, 2.0);
+		QuantityMeasurementSystem actualSum = liter.sumOfQuantity(ml, Volume.LITER);
+		assertEquals(expectedSum, actualSum);
 	}
 }
