@@ -14,6 +14,11 @@ public class QuantityMeasurementSystem {
 			return this.equals(that);
 		return Double.compare(this.unit.convertToBaseUnit(this), that.unit.convertToBaseUnit(that)) == 0;
 	}
+	
+	public QuantityMeasurementSystem sumOfQuantity(QuantityMeasurementSystem that, MeasurementUnits requiredUnit) {
+		double sumOfInput = this.unit.convertToBaseUnit(this) + that.unit.convertToBaseUnit(that);
+		return new QuantityMeasurementSystem(requiredUnit, sumOfInput);
+	}
 
 	@Override
 	public boolean equals(Object that) {

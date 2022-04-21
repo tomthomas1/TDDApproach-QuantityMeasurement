@@ -263,4 +263,44 @@ public class LengthComparisionTest {
 		boolean compareCheck = cm.compare(inch);
 		assertTrue(compareCheck);
 	}
+	
+	// UC 4 : 2 Inch + 2 Inch = 4 Inch
+	@Test
+	public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+		QuantityMeasurementSystem inch1 = new QuantityMeasurementSystem(Length.INCH, 2.0);
+		QuantityMeasurementSystem inch2 = new QuantityMeasurementSystem(Length.INCH, 2.0);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Length.INCH, 4.0);
+		QuantityMeasurementSystem actualSum = inch1.sumOfQuantity(inch2, Length.INCH);
+		assertEquals(expectedSum, actualSum);
+	}
+
+	// UC 4 : 1 Feet + 2 Inch = 14 Inch
+	@Test
+	public void given1FeetAnd2Inch_WhenAdded_ShouldReturn14Inch() {
+		QuantityMeasurementSystem feet = new QuantityMeasurementSystem(Length.FEET, 1.0);
+		QuantityMeasurementSystem inch = new QuantityMeasurementSystem(Length.INCH, 2.0);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Length.INCH, 14.0);
+		QuantityMeasurementSystem actualSum = feet.sumOfQuantity(inch, Length.INCH);
+		assertEquals(expectedSum, actualSum);
+	}
+
+	// UC 4 : 1 Feet + 1 Feet = 24 Inch
+	@Test
+	public void given1FeetAnd1Feet_WhenAdded_ShouldReturn24Inch() {
+		QuantityMeasurementSystem feet1 = new QuantityMeasurementSystem(Length.FEET, 1.0);
+		QuantityMeasurementSystem feet2 = new QuantityMeasurementSystem(Length.FEET, 1.0);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Length.INCH, 24.0);
+		QuantityMeasurementSystem actualSum = feet1.sumOfQuantity(feet2, Length.INCH);
+		assertEquals(expectedSum, actualSum);
+	}
+
+	// UC 4 : 2 Inch + 2.5 CM = 3 Inch
+	@Test
+	public void given2Inch2$5Cm_WhenAdded_ShouldReturn3Inch() {
+		QuantityMeasurementSystem inch = new QuantityMeasurementSystem(Length.INCH, 2.0);
+		QuantityMeasurementSystem cm = new QuantityMeasurementSystem(Length.CENTI_METER, 2.5);
+		QuantityMeasurementSystem expectedSum = new QuantityMeasurementSystem(Length.INCH, 3.0);
+		QuantityMeasurementSystem actualSum = inch.sumOfQuantity(cm, Length.INCH);
+		assertEquals(expectedSum, actualSum);
+	}
 }
